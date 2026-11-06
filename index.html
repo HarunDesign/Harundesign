@@ -6,13 +6,13 @@
 <title>HarunDesign · WordPress &amp; Shopify Websites</title>
 <meta name="description" content="HarunDesign builds fast, trustworthy WordPress, WooCommerce and Shopify websites for growing businesses.">
 <meta property="og:title" content="HarunDesign · WordPress &amp; Shopify Websites">
-<meta property="og:image" content="images/harun-portrait.jpg">
+<meta property="og:image" content="harun-portrait.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f2f4fb;--ink:#161a33;--mute:#5b6180;--line:#dde1f0;--card:#fff;--blue:#3347ff;--sun:#ffc23d;--mint:#14b886;--r:18px}
-@media(prefers-color-scheme:dark){:root{--bg:#0f1226;--ink:#eef0ff;--mute:#a3a9c9;--line:#262b4d;--card:#171b38;--blue:#7b8bff}}
+:root{--bg:#eef3ff;--ink:#0a1535;--mute:#4a5a85;--line:#d3ddf5;--card:#fff;--blue:#1f4fff;--navy:#0a1a4d;--sun:#e8c26b;--mint:#2fb7ff;--r:18px}
+@media(prefers-color-scheme:dark){:root{--bg:#070d26;--ink:#eaf0ff;--mute:#9fb0dd;--line:#1c2a5c;--card:#0e1740;--blue:#6f8bff}}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
@@ -126,13 +126,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
  nav ul{display:none}section{padding:62px 0}
 }
 @media(max-width:560px){.grid{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:22px}.wa span{display:none}.wa{padding:14px}}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--sun));z-index:60}
+.btn.blue{background:linear-gradient(135deg,#1f4fff,#4a2fff);border-color:transparent;box-shadow:0 10px 24px -10px rgba(31,79,255,.7)}
+.hero{background:radial-gradient(900px 500px at 85% 0,rgba(111,139,255,.35),transparent),linear-gradient(160deg,#0a1a4d,#101f66 60%,#0a1535);color:#fff}
+.hero .lead,.hero .proof{color:#c5d2ff}.hero .btn.alt{color:#fff;border-color:rgba(255,255,255,.55)}
+nav ul a.on{color:var(--blue);font-weight:600}
+.menu{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:42px;height:42px;font-size:20px;color:var(--ink);cursor:pointer}
+.badge{position:absolute;top:12px;left:12px;z-index:2;font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:99px;background:rgba(10,26,77,.85);color:#fff;backdrop-filter:blur(4px)}
+.card{position:relative;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit}
+.card .shot{position:relative;background:linear-gradient(135deg,var(--c1),var(--c2))}.card .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.more{margin-top:auto;font-weight:600;color:var(--blue);font-size:15px}
+dialog{border:0;border-radius:24px;max-width:560px;width:calc(100% - 32px);padding:0;background:var(--card);color:var(--ink);box-shadow:0 40px 90px -20px rgba(0,0,0,.55)}
+dialog::backdrop{background:rgba(7,13,38,.7);backdrop-filter:blur(4px)}
+dialog .shot{height:210px;position:relative;overflow:hidden}dialog .shot img{width:100%;height:100%;object-fit:cover;object-position:top}dialog .bd{padding:26px 28px 30px}dialog h3{font-size:28px;margin-bottom:8px}
+dialog ul{margin:14px 0 22px 20px;color:var(--mute)}dialog .x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#0a1535;font-size:22px;cursor:pointer;z-index:3}
+.top{position:fixed;left:18px;bottom:18px;z-index:30;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s}
+.top.show{opacity:1;pointer-events:auto}
+.count{font-size:13px;color:var(--mute);text-align:right}
+input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
+@media(max-width:860px){.menu{display:block}nav ul{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--card);border-bottom:1px solid var(--line);padding:8px 22px;display:none}nav ul.open{display:flex}nav ul li a{display:block;padding:12px 0}.hero{padding-top:44px}}
 </style>
 </head>
 <body>
+<div id="prog"></div>
 <header><div class="wrap"><nav aria-label="Main">
  <a class="logo" href="#top">Harun<b>Design</b></a>
  <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li></ul>
- <a class="btn blue" href="#start">Start a project</a>
+ <a class="btn blue" href="#start">Start a project</a><button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
 </nav></div></header>
 
 <main id="top">
@@ -151,23 +172,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></div>
 
 <section id="work"><div class="wrap">
- <div class="head"><h2>Selected work</h2><p>A few of the website types I build. Each one is planned around what that business’s customers need to see, trust and do.</p></div>
+ <div class="head"><h2>Brands I’ve worked with</h2><p>Websites for businesses in law, fashion, hospitality, retail and property. Tap any project for details.</p></div>
  <div class="tabs" role="group" aria-label="Filter projects">
   <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="wp">WordPress</button><button aria-pressed="false" data-f="shop">Online stores</button><button aria-pressed="false" data-f="biz">Business sites</button>
  </div>
  <div class="grid" id="grid">
-  <article class="card" data-t="wp biz"><div class="shot" style="--c1:#1d2b64;--c2:#3347ff"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div><div class="in"><h3>Law &amp; consulting firm</h3><p>Credibility-first layout with practice areas, team profiles and a consultation booking form.</p><div class="tags"><span>WordPress</span><span>Elementor</span><span>Booking</span></div></div></article>
-  <article class="card" data-t="shop"><div class="shot" style="--c1:#ff6a4d;--c2:#ffb15c"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div><div class="in"><h3>Fashion store</h3><p>Shopify store with quick collections, size guides, upsells and a one-page checkout flow.</p><div class="tags"><span>Shopify</span><span>Custom theme</span><span>Conversion</span></div></div></article>
-  <article class="card" data-t="wp biz"><div class="shot" style="--c1:#0f9d76;--c2:#6fd9a8"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div><div class="in"><h3>Restaurant &amp; cafe</h3><p>Menu pages, table reservations, Google Maps and WhatsApp ordering built for phones.</p><div class="tags"><span>WordPress</span><span>Reservations</span><span>Local SEO</span></div></div></article>
-  <article class="card" data-t="wp shop"><div class="shot" style="--c1:#7b2ff7;--c2:#d46bff"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div><div class="in"><h3>Beauty &amp; wellness shop</h3><p>WooCommerce store with product bundles, payments and automated order emails.</p><div class="tags"><span>WooCommerce</span><span>Payments</span><span>Email flows</span></div></div></article>
-  <article class="card" data-t="wp biz"><div class="shot" style="--c1:#0b6e99;--c2:#2bc4d8"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div><div class="in"><h3>Real estate listings</h3><p>Searchable property listings with filters, image galleries and enquiry capture.</p><div class="tags"><span>WordPress</span><span>Listings</span><span>Lead forms</span></div></div></article>
-  <article class="card" data-t="shop"><div class="shot" style="--c1:#222a54;--c2:#ff6a4d"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div><div class="in"><h3>Shopify to WooCommerce move</h3><p>Full store migration with products, customers and redirects, so rankings and sales carry over.</p><div class="tags"><span>Migration</span><span>Shopify</span><span>WooCommerce</span></div></div></article>
- </div>
- <p class="note">Case studies shown are project types I build. Ask on WhatsApp for live links and before-and-after examples.</p>
+<button class="card" data-t="wp biz" data-i="0" aria-haspopup="dialog"><div class="shot" style="--c1:#0a1a4d;--c2:#3d63ff"><img src="work-1.jpg" alt="West End Consultants website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>West End Consultants</h3><p>UK immigration consultancy website with services, FAQs, reviews and an enquiry form.</p><div class="tags"><span>WordPress</span><span>Elementor</span><span>Enquiry forms</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="shop" data-i="1" aria-haspopup="dialog"><div class="shot" style="--c1:#1b2f8f;--c2:#6f8bff"><img src="work-2.jpg" alt="G7 Clothing website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>G7 Clothing</h3><p>Wholesale women’s fashion store with collections, product carousels and trade accounts.</p><div class="tags"><span>Online store</span><span>Collections</span><span>Wholesale</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="wp biz" data-i="2" aria-haspopup="dialog"><div class="shot" style="--c1:#0b5cad;--c2:#38b6ff"><img src="work-3.jpg" alt="Nonòs website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Nonòs</h3><p>Greek Mediterranean restaurant website with locations, menus and table booking.</p><div class="tags"><span>WordPress</span><span>Reservations</span><span>Local SEO</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="wp shop" data-i="3" aria-haspopup="dialog"><div class="shot" style="--c1:#2a1f8f;--c2:#8b6bff"><img src="work-4.jpg" alt="Premium UK Peptides website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Premium UK Peptides</h3><p>WooCommerce-style online store with product collections and certificate-of-analysis pages.</p><div class="tags"><span>WooCommerce</span><span>Product catalogue</span><span>Payments</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="wp biz" data-i="4" aria-haspopup="dialog"><div class="shot" style="--c1:#06356b;--c2:#2bb3d8"><img src="work-5.jpg" alt="Real Estates website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Real Estates</h3><p>North London estate agent website with property search, listings and enquiry forms.</p><div class="tags"><span>WordPress</span><span>Listings</span><span>Lead forms</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="shop" data-i="5" aria-haspopup="dialog"><div class="shot" style="--c1:#0a1a4d;--c2:#e8c26b"><img src="work-6.jpg" alt="Harrods website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Harrods</h3><p>Luxury online department store with designer collections, gift guides and editorial stories.</p><div class="tags"><span>Online store</span><span>Luxury retail</span><span>E-commerce</span></div><span class="more">View details</span></div></button>
+</div>
+ <p class="note">Brand names, logos and website designs belong to their owners. Tap a project to see the live site.</p>
 </div></section>
 
 <section id="about"><div class="wrap about">
- <div class="pic"><img src="images/harun-portrait.jpg" width="960" height="1200" loading="lazy" alt="Portrait of Harun, the developer behind HarunDesign"></div>
+ <div class="pic"><img src="harun-portrait.jpg" width="960" height="1200" loading="lazy" alt="Portrait of Harun, the developer behind HarunDesign"></div>
  <div>
   <h2>Hi, I’m Harun, the developer behind HarunDesign.</h2>
   <p>I’m a web designer and Shopify store expert who now builds WordPress and WooCommerce websites too. I work directly with every client, so you talk to the person building your site, not an account manager.</p>
@@ -231,12 +252,41 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <a class="wa" href="https://wa.me/2348101628877?text=Hi%20HarunDesign%2C%20I%20want%20a%20website." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg><span>Chat on WhatsApp</span></a>
 
+<dialog id="dlg" aria-labelledby="dt"><button class="x" aria-label="Close">×</button><div class="shot" id="dshot"></div><div class="bd"><h3 id="dt"></h3><p id="dd"></p><ul id="dl"></ul><a class="btn blue" href="#start" id="dgo">Start a similar project</a> <a class="btn alt" id="dlive" target="_blank" rel="noopener">Visit live site</a></div></dialog>
+<button class="top" aria-label="Back to top">↑</button>
 <script>
 /* ===== SETTINGS ===== */
 const SHEET_URL = "";  // Paste your Google Apps Script Web App URL here (see setup-google-sheet.gs)
 const EMAIL = "harundesign.web@gmail.com";
 const WHATSAPP = "2348101628877";
 /* ==================== */
+
+const WORK=[["West End Consultants", "UK immigration consultancy website with services, FAQs, reviews and an enquiry form.", ["Service pages for visas and sponsor licences", "Client reviews and FAQs", "Enquiry form for new clients"], "https://www.westendconsultants.co.uk/"], ["G7 Clothing", "Wholesale women’s fashion store with collections, product carousels and trade accounts.", ["Collection and product browsing", "Trade account sign-up", "Customer reviews"], "http://g7clothing.com/"], ["Nonòs", "Greek Mediterranean restaurant website with locations, menus and table booking.", ["Location pages for each restaurant", "Table booking and menus", "Guest reviews and newsletter sign-up"], "http://nonos.co.uk/"], ["Premium UK Peptides", "WooCommerce-style online store with product collections and certificate-of-analysis pages.", ["Product collections and filters", "Articles and FAQs", "Secure checkout"], "https://premiumukpeptides.co.uk/"], ["Real Estates", "North London estate agent website with property search, listings and enquiry forms.", ["Property search with filters", "Listing galleries", "Subscribe for property updates"], "http://www.realestates-wsp.co.uk/"], ["Harrods", "Luxury online department store with designer collections, gift guides and editorial stories.", ["Designer and category navigation", "Product carousels and editorial stories", "Gift guides"], "https://www.harrods.com/"]];
+const dlg=document.getElementById('dlg');
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>{const w=WORK[c.dataset.i];
+ document.getElementById('dt').innerHTML=w[0];document.getElementById('dd').innerHTML=w[1];
+ document.getElementById('dlive').href=w[3];document.getElementById('dl').innerHTML=w[2].map(x=>'<li>'+x+'</li>').join('');
+ document.getElementById('dshot').style.cssText=c.querySelector('.shot').getAttribute('style');
+ const im=c.querySelector('.shot img');const old=document.querySelector('#dshot img');if(old)old.remove();
+ if(im){const n=im.cloneNode();n.style.cssText='';document.getElementById('dshot').append(n);}
+ dlg.showModal();}));
+dlg.querySelector('.x').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+document.getElementById('dgo').addEventListener('click',()=>dlg.close());
+// progress, back-to-top, active nav, mobile menu
+const prog=document.getElementById('prog'),topb=document.querySelector('.top');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';topb.classList.toggle('show',h.scrollTop>700)},{passive:true});
+topb.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const links=[...document.querySelectorAll('nav ul a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['work','about','services','process','start'].forEach(id=>{const el=document.getElementById(id);el&&io.observe(el)});
+const mb=document.querySelector('.menu'),ul=document.querySelector('nav ul');
+mb.onclick=()=>{const o=ul.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+ul.addEventListener('click',()=>ul.classList.remove('open'));
+// live character counter + remembered draft
+const det=document.getElementById('details');const cnt=document.createElement('div');cnt.className='count';det.after(cnt);
+const upd=()=>{cnt.textContent=det.value.length+' characters';try{sessionStorage.setItem('hd_draft',det.value)}catch(e){}};
+try{det.value=sessionStorage.getItem('hd_draft')||''}catch(e){}det.addEventListener('input',upd);upd();
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Portfolio filter
