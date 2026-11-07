@@ -256,7 +256,7 @@ input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
 <button class="top" aria-label="Back to top">↑</button>
 <script>
 /* ===== SETTINGS ===== */
-const SHEET_URL = "";  // https://script.google.com/macros/s/AKfycbxc9Js9M7idjBY1A9IxA4SFickm08KP_FKwUh0NYFBnhcehQoXvT6lU3RgUk0s-46Lu/exec
+const SHEET_URL = "";  // Paste your Google Apps Script Web App URL here (see setup-google-sheet.gs)
 const EMAIL = "harundesign.web@gmail.com";
 const WHATSAPP = "2348101628877";
 /* ==================== */
@@ -287,6 +287,7 @@ ul.addEventListener('click',()=>ul.classList.remove('open'));
 const det=document.getElementById('details');const cnt=document.createElement('div');cnt.className='count';det.after(cnt);
 const upd=()=>{cnt.textContent=det.value.length+' characters';try{sessionStorage.setItem('hd_draft',det.value)}catch(e){}};
 try{det.value=sessionStorage.getItem('hd_draft')||''}catch(e){}det.addEventListener('input',upd);upd();
+if(/[?&]sent=1/.test(location.search)){const fm=document.getElementById('brief');fm.classList.add('sent');history.replaceState(null,'',location.pathname+'#start')}
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Portfolio filter
@@ -336,23 +337,39 @@ document.getElementById('brief').addEventListener('submit', async e => {
   if (!v('name') || !/^\S+@\S+\.\S+$/.test(v('email')) || !v('project_type') || !v('details')) { showErr('Please fill in your name, a valid email, what you need, and the project details.'); return; }
   showErr(''); btn.disabled = true; btn.textContent = 'Sending…';
   const data = { name: v('name'), email: v('email'), phone: v('phone'), business: v('business'), project_type: v('project_type'), budget: v('budget'), deadline: v('deadline'), reference_links: v('reference_links'), details: v('details'), page: location.href };
-  let ok = false;
-  try {
-    // 1) Google Sheets + Drive (with uploaded files) via Apps Script
-    if (SHEET_URL) {
+  let sheetOk = false, mailOk = false, note = '';
+  // 1) Google Sheets + Drive (with uploaded files) via Apps Script
+  if (SHEET_URL) {
+    try {
       const payload = { ...data, files: await Promise.all(files.map(async f => ({ name: f.name, type: f.type, data: await toB64(f) }))) };
       const r = await fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
-      ok = r.ok;
-    }
-    // 2) Email copy via FormSubmit (text details)
+      const j = await r.json().catch(() => ({ ok: r.ok }));
+      sheetOk = r.ok && j.ok !== false;
+    } catch (err) { console.warn('Sheet send failed', err); }
+  }
+  // 2) Email copy via FormSubmit (text details). Runs even if the sheet step fails.
+  try {
     const fs = await fetch('https://formsubmit.co/ajax/' + EMAIL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ ...data, uploaded_files: files.map(f => f.name).join(', ') || 'none', _subject: 'New project brief from ' + data.name, _template: 'table', _captcha: 'false' }) });
-    ok = ok || fs.ok;
-  } catch (err) { /* handled below */ }
+    const j = await fs.json().catch(() => ({}));
+    mailOk = fs.ok && String(j.success) !== 'false';
+    if (!mailOk && /activat/i.test(j.message || '')) note = 'Almost there: open the activation email FormSubmit sent to ' + EMAIL + ', click the link, then send again.';
+  } catch (err) { console.warn('Email send failed', err); }
+  const ok = sheetOk || mailOk;
+  if (!ok && !note) {
+    // Backup route: a normal form post to FormSubmit (works when background requests are blocked)
+    showErr('Trying a backup route, please wait…'); msg.className = 'msg';
+    const f = document.createElement('form'); f.method = 'POST'; f.action = 'https://formsubmit.co/' + EMAIL; f.enctype = 'multipart/form-data'; f.style.display = 'none';
+    const add = (n, val) => { const i = document.createElement('input'); i.type = 'hidden'; i.name = n; i.value = val; f.append(i); };
+    Object.entries(data).forEach(([k, val]) => add(k, val));
+    add('_subject', 'New project brief from ' + data.name); add('_template', 'table'); add('_captcha', 'false'); add('_next', location.origin + location.pathname + '?sent=1#start');
+    if (files.length) { const fi = document.createElement('input'); fi.type = 'file'; fi.name = 'attachment'; fi.multiple = true; const dt = new DataTransfer(); files.forEach(x => dt.items.add(x)); fi.files = dt.files; f.append(fi); }
+    document.body.append(f); f.submit(); return;
+  }
   if (ok) { form.classList.add('sent'); form.scrollIntoView({ behavior: 'smooth', block: 'center' }); files = []; render(); }
   else {
     const t = encodeURIComponent('Hi HarunDesign, I’m ' + data.name + '. I need: ' + data.project_type + '. ' + data.details);
-    showErr('Sorry, the form could not send. Please tap “Chat on WhatsApp” instead, or email ' + EMAIL + '.');
+    showErr(note || ('Sorry, the form could not send. Please tap “Chat on WhatsApp” instead, or email ' + EMAIL + '.'));
     document.getElementById('waBtn').href = 'https://wa.me/' + WHATSAPP + '?text=' + t;
     btn.disabled = false; btn.textContent = 'Try again';
   }
