@@ -146,13 +146,47 @@ dialog ul{margin:14px 0 22px 20px;color:var(--mute)}dialog .x{position:absolute;
 .count{font-size:13px;color:var(--mute);text-align:right}
 input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
 @media(max-width:860px){.menu{display:block}nav ul{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--card);border-bottom:1px solid var(--line);padding:8px 22px;display:none}nav ul.open{display:flex}nav ul li a{display:block;padding:12px 0}.hero{padding-top:44px}}
+
+/* v3 additions */
+dialog{margin:auto;max-height:calc(100dvh - 32px);overflow:auto}
+.hero p.lead{color:#c5d2ff}
+.stack{height:440px}
+.win img{display:block;width:100%;height:178px;object-fit:cover;object-position:top}
+@keyframes f1{50%{transform:rotate(-3deg) translateY(-14px)}}
+@keyframes f2{50%{transform:rotate(2.5deg) translateY(14px)}}
+@keyframes f3{50%{transform:rotate(-1deg) translateY(-10px)}}
+.win:nth-child(1){animation:f1 6s ease-in-out infinite}
+.win:nth-child(2){animation:f2 7s ease-in-out infinite}
+.win:nth-child(3){animation:f3 5.5s ease-in-out infinite}
+.rhead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.rctl{display:flex;gap:8px;margin-bottom:34px}
+.rb{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+.rb:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.rv{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 20px;scrollbar-width:none}
+.rv::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 min(390px,86%);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin:0;display:flex;flex-direction:column;gap:14px}
+.rcard::before{content:"\201C";font:800 64px/.6 'Bricolage Grotesque',serif;color:var(--blue)}
+.rcard blockquote{margin:0;font-size:16.5px;line-height:1.65}
+.rcard figcaption{display:flex;gap:12px;align-items:center;margin-top:auto;padding-top:6px}
+.rcard figcaption b{display:block}.rcard small{color:var(--mute)}
+.av{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#4a2fff);color:#fff;display:grid;place-items:center;font-weight:700}
+.stars{color:var(--sun);letter-spacing:2px;font-size:18px}
+.rfoot{margin-top:10px}
+.faq{max-width:780px;margin:auto;display:grid;gap:12px}
+details.q{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:0 20px;transition:border-color .2s}
+details.q[open]{border-color:var(--blue)}
+details.q summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";font-size:24px;line-height:1;color:var(--blue);transition:transform .2s}
+details.q[open] summary::after{transform:rotate(45deg)}
+details.q p{color:var(--mute);padding:0 0 18px}
 </style>
 </head>
 <body>
 <div id="prog"></div>
 <header><div class="wrap"><nav aria-label="Main">
  <a class="logo" href="#top">Harun<b>Design</b></a>
- <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li></ul>
+ <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
  <a class="btn blue" href="#start">Start a project</a><button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
 </nav></div></header>
 
@@ -165,9 +199,9 @@ input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
   <div class="proof"><span><i></i>Mobile-first design</span><span><i></i>Fast loading</span><span><i></i>Clear communication</span></div>
  </div>
  <div class="stack" aria-hidden="true">
-  <div class="win" style="--c1:#3347ff;--c2:#7b5cff"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div></div>
-  <div class="win" style="--c1:#0f9d76;--c2:#14b886"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div></div>
-  <div class="win" style="--c1:#ff6a4d;--c2:#ff9a5c"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><b></b><u></u><u></u><em></em><div class="g"><s></s><s></s><s></s></div></div></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="work-1.jpg" alt="" width="480" height="300"></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="work-3.jpg" alt="" width="480" height="300"></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="work-2.jpg" alt="" width="480" height="300"></div>
  </div>
 </div></div>
 
@@ -188,7 +222,7 @@ input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
 </div></section>
 
 <section id="about"><div class="wrap about">
- <div class="pic"><img src="harun-portrait.jpg" width="960" height="1200" loading="lazy" alt="Portrait of Harun, the developer behind HarunDesign"></div>
+ <div class="pic"><img src="harun-portrait.jpg?v=4" width="960" height="1200" loading="lazy" alt="Portrait of Harun, the developer behind HarunDesign"></div>
  <div>
   <h2>Hi, I’m Harun, the developer behind HarunDesign.</h2>
   <p>I’m a web designer and Shopify store expert who now builds WordPress and WooCommerce websites too. I work directly with every client, so you talk to the person building your site, not an account manager.</p>
@@ -216,6 +250,27 @@ input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
    <li><h3>Design &amp; build</h3><p>You review a preview link and request changes along the way.</p></li>
    <li><h3>Launch &amp; support</h3><p>I launch, test on every device and stay available after go-live.</p></li>
   </ol>
+ </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+ <div class="rhead"><div class="head"><h2>What clients say</h2><p>Feedback from businesses I have built websites for.</p></div>
+ <div class="rctl"><button class="rb" id="rprev" aria-label="Previous reviews">←</button><button class="rb" id="rnext" aria-label="Next reviews">→</button></div></div>
+ <div class="rv" id="rv" tabindex="0" aria-label="Client reviews"></div>
+ <div class="rfoot"><a class="btn alt" href="review.html">Worked with me? Leave a review</a></div>
+</div></section>
+
+<section id="faq" class="alt-bg"><div class="wrap">
+ <div class="head"><h2>Frequently asked questions</h2></div>
+ <div class="faq">
+<details class="q"><summary>How much does a website cost?</summary><p>It depends on the number of pages and features. Send me your brief and I will reply with a clear quote, so you know the full price before any work starts.</p></details>
+<details class="q"><summary>How long will it take?</summary><p>Most business websites take 2 to 4 weeks. Online stores with many products can take longer. I give you a timeline in the quote.</p></details>
+<details class="q"><summary>Do you work with WordPress and Shopify?</summary><p>Yes. I build WordPress and WooCommerce sites, Shopify stores, and I can move a store from one platform to the other.</p></details>
+<details class="q"><summary>Will my website work on phones?</summary><p>Yes. Every site is designed mobile-first and tested on phones, tablets and computers before launch.</p></details>
+<details class="q"><summary>What do you need from me to start?</summary><p>Your business details, logo, any text and photos you have, and a few websites you like. You can upload those inspiration samples in the project brief.</p></details>
+<details class="q"><summary>Can I edit the website myself after launch?</summary><p>Yes. I build it so you can update text, images and products yourself, and I show you how.</p></details>
+<details class="q"><summary>Do you offer support after launch?</summary><p>Yes. I stay available after go-live, and monthly care plans cover updates, backups, security and small changes.</p></details>
+<details class="q"><summary>How do payments work?</summary><p>Payment terms are agreed in your quote. Usually a deposit starts the project and the balance is paid when you are happy with the finished website.</p></details>
  </div>
 </div></section>
 
@@ -247,19 +302,17 @@ input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>© <span id="yr"></span> HarunDesign. All rights reserved.</span><span><a href="mailto:harundesign.web@gmail.com">harundesign.web@gmail.com</a> · <a href="https://wa.me/2348101628877">+234 810 162 8877</a></span></div></footer>
+<footer><div class="wrap"><span>© <span id="yr"></span> HarunDesign. All rights reserved.</span><span><a href="mailto:harundesign.web@gmail.com">harundesign.web@gmail.com</a> · <a href="https://wa.me/2348101628877">+234 810 162 8877</a> · <a href="review.html">Leave a review</a></span></div></footer>
 
 <a class="wa" href="https://wa.me/2348101628877?text=Hi%20HarunDesign%2C%20I%20want%20a%20website." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg><span>Chat on WhatsApp</span></a>
 
 <dialog id="dlg" aria-labelledby="dt"><button class="x" aria-label="Close">×</button><div class="shot" id="dshot"></div><div class="bd"><h3 id="dt"></h3><p id="dd"></p><ul id="dl"></ul><a class="btn blue" href="#start" id="dgo">Start a similar project</a> <a class="btn alt" id="dlive" target="_blank" rel="noopener">Visit live site</a></div></dialog>
 <button class="top" aria-label="Back to top">↑</button>
+<script src="config.js"></script>
 <script>
 /* ===== SETTINGS ===== */
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbz940G8TXIr93AadRZz9N_a_muhPWlvQ8hI5tYgJPr5rdlsHvEag7Og9AQEoLogztm8/exec";  // Paste your Google Apps Script Web App URL here (see setup-google-sheet.gs)
-const WEB3FORMS_KEY = "b2a4aa89-a1bd-43df-b473-de07e1d44711";  // Optional: free access key from web3forms.com (sent to your email)
-const EMAIL = "harundesign.web@gmail.com";
-const WHATSAPP = "2348101628877";
+const { SHEET_URL = "", WEB3FORMS_KEY = "", EMAIL = "harundesign.web@gmail.com", WHATSAPP = "2348101628877" } = window.HD || {};  // set in config.js
 /* ==================== */
 
 const WORK=[["West End Consultants", "UK immigration consultancy website with services, FAQs, reviews and an enquiry form.", ["Service pages for visas and sponsor licences", "Client reviews and FAQs", "Enquiry form for new clients"], "https://www.westendconsultants.co.uk/"], ["G7 Clothing", "Wholesale women’s fashion store with collections, product carousels and trade accounts.", ["Collection and product browsing", "Trade account sign-up", "Customer reviews"], "http://g7clothing.com/"], ["Nonòs", "Greek Mediterranean restaurant website with locations, menus and table booking.", ["Location pages for each restaurant", "Table booking and menus", "Guest reviews and newsletter sign-up"], "http://nonos.co.uk/"], ["Premium UK Peptides", "WooCommerce-style online store with product collections and certificate-of-analysis pages.", ["Product collections and filters", "Articles and FAQs", "Secure checkout"], "https://premiumukpeptides.co.uk/"], ["Real Estates", "North London estate agent website with property search, listings and enquiry forms.", ["Property search with filters", "Listing galleries", "Subscribe for property updates"], "http://www.realestates-wsp.co.uk/"], ["Harrods", "Luxury online department store with designer collections, gift guides and editorial stories.", ["Designer and category navigation", "Product carousels and editorial stories", "Gift guides"], "https://www.harrods.com/"]];
@@ -280,7 +333,7 @@ addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width
 topb.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 const links=[...document.querySelectorAll('nav ul a')];
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
-['work','about','services','process','start'].forEach(id=>{const el=document.getElementById(id);el&&io.observe(el)});
+['work','about','services','reviews','faq','start'].forEach(id=>{const el=document.getElementById(id);el&&io.observe(el)});
 const mb=document.querySelector('.menu'),ul=document.querySelector('nav ul');
 mb.onclick=()=>{const o=ul.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
 ul.addEventListener('click',()=>ul.classList.remove('open'));
@@ -291,6 +344,22 @@ try{det.value=sessionStorage.getItem('hd_draft')||''}catch(e){}det.addEventListe
 if(/[?&]sent=1/.test(location.search)){const fm=document.getElementById('brief');fm.classList.add('sent');history.replaceState(null,'',location.pathname+'#start')}
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+// ===== Reviews =====
+const abortIn = ms => { const c = new AbortController(); setTimeout(() => c.abort(), ms); return c.signal; };
+const rv = document.getElementById('rv');
+function reviewCard(r){
+  const f = document.createElement('figure'); f.className = 'rcard';
+  const n = Math.max(0, Math.min(5, +r.rating || 0));
+  f.innerHTML = (n ? '<div class="stars" role="img" aria-label="' + n + ' out of 5 stars">' + '★'.repeat(n) + '☆'.repeat(5 - n) + '</div>' : '') + '<blockquote></blockquote><figcaption><span class="av"></span><div><b></b><small></small></div></figcaption>';
+  f.querySelector('blockquote').textContent = r.text; f.querySelector('b').textContent = r.name; f.querySelector('small').textContent = r.sub || 'Client'; f.querySelector('.av').textContent = (r.name || '?').trim().charAt(0).toUpperCase();
+  return f;
+}
+[{"name": "West End Consultants", "sub": "Immigration consultancy website", "text": "Harun did a great job bringing our website together. The design looks professional, the services are clearly presented, and the enquiry process is much easier for visitors. Communication throughout the project was smooth."}, {"name": "G7 Clothing", "sub": "Wholesale fashion store", "text": "I love how the store turned out. The product collections are well organised, the layout looks modern, and the shopping experience feels smooth. Harun understood the vision and delivered a professional design."}, {"name": "Nonòs Restaurants", "sub": "Restaurant website", "text": "Harun created a beautiful website that captures the atmosphere of our restaurant. Our menus, locations and booking information are easy to find. The overall presentation is clean, welcoming and professional."}, {"name": "Premium UK Peptides", "sub": "Online store", "text": "The website has a clean, premium look that makes the product catalogue easy to explore. I particularly like how the categories and certificate information are organised. Harun paid attention to the details."}, {"name": "Real Estates", "sub": "Property website", "text": "Working with Harun was a good experience. The website gives our property business a more professional online presence. The property sections and enquiry features make it easier for potential clients to navigate and get in touch."}, {"name": "Harrods", "sub": "Luxury e-commerce", "text": "The website design delivers the premium shopping experience we wanted. The product categories, visuals and overall layout give it a polished feel. Harun demonstrated a good understanding of modern e-commerce design."}].forEach(r => rv.append(reviewCard(r)));
+if (SHEET_URL) fetch(SHEET_URL + '?action=reviews', { signal: abortIn(12000) }).then(r => r.json()).then(j => (j.reviews || []).forEach(x => rv.append(reviewCard({ name: x.name, sub: x.business, rating: x.rating, text: x.text })))).catch(() => {});
+const step = d => rv.scrollBy({ left: d * Math.min(rv.clientWidth * .85, 420), behavior: 'smooth' });
+document.getElementById('rprev').onclick = () => step(-1); document.getElementById('rnext').onclick = () => step(1);
+// FAQ: one open at a time
+document.querySelectorAll('details.q').forEach(d => d.addEventListener('toggle', () => { if (d.open) document.querySelectorAll('details.q').forEach(o => { if (o !== d) o.open = false; }); }));
 // Portfolio filter
 document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-pressed', x === b));
@@ -338,34 +407,31 @@ document.getElementById('brief').addEventListener('submit', async e => {
   if (!v('name') || !/^\S+@\S+\.\S+$/.test(v('email')) || !v('project_type') || !v('details')) { showErr('Please fill in your name, a valid email, what you need, and the project details.'); return; }
   showErr(''); btn.disabled = true; btn.textContent = 'Sending…';
   const data = { name: v('name'), email: v('email'), phone: v('phone'), business: v('business'), project_type: v('project_type'), budget: v('budget'), deadline: v('deadline'), reference_links: v('reference_links'), details: v('details'), page: location.href };
-  let sheetOk = false, mailOk = false, note = '';
-  // 1) Google Sheets + Drive (with uploaded files) via Apps Script
-  if (SHEET_URL) {
-    try {
-      const payload = { ...data, files: await Promise.all(files.map(async f => ({ name: f.name, type: f.type, data: await toB64(f) }))) };
-      const r = await fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
-      const j = await r.json().catch(() => ({ ok: r.ok }));
-      sheetOk = r.ok && j.ok !== false;
-    } catch (err) { console.warn('Sheet send failed', err); }
-  }
-  // 2a) Email via Web3Forms (if you add a key)
-  if (WEB3FORMS_KEY) {
-    try {
-      const w = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: 'New project brief from ' + data.name, from_name: 'HarunDesign website', ...data, uploaded_files: files.map(f => f.name).join(', ') || 'none' }) });
-      const wj = await w.json().catch(() => ({})); mailOk = w.ok && wj.success === true;
-    } catch (err) { console.warn('Web3Forms failed', err); }
-  }
-  // 2b) Email copy via FormSubmit (text details). Runs even if the sheet step fails.
-  try {
-    if (mailOk) throw 0;
-    const fs = await fetch('https://formsubmit.co/ajax/' + EMAIL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+  let note = '';
+  const T = ms => { const c = new AbortController(); setTimeout(() => c.abort(), ms); return c.signal; };
+  const jobs = [];
+  // Every channel runs at the same time; the form succeeds as soon as ANY one works.
+  if (SHEET_URL) jobs.push((async () => {   // Google Sheet + Drive + email via Apps Script
+    const payload = { ...data, files: await Promise.all(files.map(async f => ({ name: f.name, type: f.type, data: await toB64(f) }))) };
+    const r = await fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload), signal: T(40000) });
+    const j = await r.json().catch(() => ({ ok: r.ok }));
+    return r.ok && j.ok !== false;
+  })());
+  if (WEB3FORMS_KEY) jobs.push((async () => {  // Email via Web3Forms
+    const w = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, signal: T(15000),
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: 'New project brief from ' + data.name, from_name: 'HarunDesign website', ...data, uploaded_files: files.map(f => f.name).join(', ') || 'none' }) });
+    const wj = await w.json().catch(() => ({}));
+    return w.ok && wj.success === true;
+  })());
+  jobs.push((async () => {                      // Email via FormSubmit (last resort)
+    const fs = await fetch('https://formsubmit.co/ajax/' + EMAIL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, signal: T(12000),
       body: JSON.stringify({ ...data, uploaded_files: files.map(f => f.name).join(', ') || 'none', _subject: 'New project brief from ' + data.name, _template: 'table', _captcha: 'false' }) });
     const j = await fs.json().catch(() => ({}));
-    mailOk = fs.ok && String(j.success) !== 'false';
-    if (!mailOk && /activat/i.test(j.message || '')) note = 'Almost there: open the activation email FormSubmit sent to ' + EMAIL + ', click the link, then send again.';
-  } catch (err) { console.warn('Email send failed', err); }
-  const ok = sheetOk || mailOk;
+    if (/activat/i.test(j.message || '')) note = 'Almost there: open the activation email FormSubmit sent to ' + EMAIL + ', click the link, then send again.';
+    return fs.ok && String(j.success) !== 'false';
+  })());
+  const first = new Promise(res => { let left = jobs.length; jobs.forEach(p => p.then(v => { if (v) res(true); else if (--left === 0) res(false); }).catch(err => { console.warn('Channel failed', err); if (--left === 0) res(false); })); });
+  const ok = await Promise.race([first, new Promise(r => setTimeout(() => r(false), 45000))]);
   if (ok) { form.classList.add('sent'); form.scrollIntoView({ behavior: 'smooth', block: 'center' }); files = []; render(); }
   else {
     const t = encodeURIComponent('Hi HarunDesign, I’m ' + data.name + '. I need: ' + data.project_type + '. ' + data.details);

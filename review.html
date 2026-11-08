@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leave a review · HarunDesign</title><meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3ff;--ink:#0a1535;--mute:#4a5a85;--line:#d3ddf5;--card:#fff;--blue:#1f4fff;--navy:#0a1a4d;--sun:#e8c26b;--mint:#2fb7ff;--r:18px}
+@media(prefers-color-scheme:dark){:root{--bg:#070d26;--ink:#eaf0ff;--mute:#9fb0dd;--line:#1c2a5c;--card:#0e1740;--blue:#6f8bff}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:84px 0}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font:800 22px 'Bricolage Grotesque';text-decoration:none}.logo b{color:var(--blue)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav ul a{text-decoration:none;font-weight:500;color:var(--mute)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font:600 16px Figtree;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.hero{padding:70px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+h1{font-size:clamp(40px,6vw,70px);font-weight:800}
+.hero p.lead{font-size:20px;color:var(--mute);margin:22px 0 30px;max-width:30em}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.proof{display:flex;gap:26px;margin-top:38px;color:var(--mute);font-size:15px;flex-wrap:wrap}
+.proof span{display:flex;align-items:center;gap:8px}.proof i{width:9px;height:9px;border-radius:50%;background:var(--mint)}
+/* browser mockups */
+.stack{position:relative;height:420px}
+.win{position:absolute;width:76%;border-radius:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 50px -22px rgba(22,26,51,.45);overflow:hidden}
+.win:nth-child(1){top:0;left:0;transform:rotate(-3deg)}
+.win:nth-child(2){top:90px;right:0;transform:rotate(2.5deg)}
+.win:nth-child(3){bottom:0;left:12%;transform:rotate(-1deg);animation:rise .9s .1s both}
+@keyframes rise{from{transform:translateY(34px);opacity:0}}
+.bar{display:flex;gap:5px;padding:9px 11px;border-bottom:1px solid var(--line)}
+.bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.shot{height:150px;padding:14px;display:grid;gap:8px;align-content:start;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.shot b{display:block;height:14px;width:62%;border-radius:4px;background:rgba(255,255,255,.92)}
+.shot u{display:block;height:7px;width:84%;border-radius:4px;background:rgba(255,255,255,.5)}
+.shot u+u{width:58%}
+.shot em{display:block;height:20px;width:30%;border-radius:99px;background:var(--sun)}
+.shot .g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
+.shot .g s{height:34px;border-radius:6px;background:rgba(255,255,255,.28)}
+/* work */
+.head{max-width:640px;margin-bottom:34px}
+h2{font-size:clamp(32px,4.5vw,50px);font-weight:800}
+.head p{color:var(--mute);margin-top:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{font:500 15px Figtree;padding:9px 18px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(22,26,51,.5)}
+.card .shot{height:190px}
+.card .in{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:22px}.card p{color:var(--mute);font-size:15.5px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.tags span{font-size:13px;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--blue);font-weight:600}
+.card.hide{display:none}
+.note{margin-top:22px;font-size:14px;color:var(--mute)}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.pic{position:relative;max-width:380px}
+.pic::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;background:linear-gradient(135deg,var(--blue),var(--mint));opacity:.9}
+.pic img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;border:4px solid var(--card)}
+.about p{color:var(--mute);margin-top:14px;max-width:34em}
+.about h2{margin-bottom:4px}
+.skills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 26px}
+.skills span{padding:6px 14px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font-size:14.5px;font-weight:500}
+/* services + process */
+.alt-bg{background:var(--card);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.svc{display:grid;gap:14px;margin-top:6px}
+.svc div{padding:18px 20px;border-radius:14px;border:1px solid var(--line);background:var(--bg)}
+.svc h3{font-size:19px;margin-bottom:4px}.svc p{color:var(--mute);font-size:15.5px}
+ol.steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:0;border-left:3px solid var(--line);margin-left:12px}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 26px 30px}
+ol.steps li::before{content:counter(s);position:absolute;left:-17px;top:0;width:31px;height:31px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:700 14px Figtree}
+ol.steps h3{font-size:20px}ol.steps p{color:var(--mute);font-size:15.5px}
+/* form */
+.formbox{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.side p{color:var(--mute);margin:14px 0 24px}
+.side a.btn{margin:0 8px 10px 0}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}.f.full{grid-column:1/-1}
+label{font-weight:600;font-size:15px}
+input,select,textarea{font:400 16px Figtree;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--blue) 20%,transparent)}
+textarea{min-height:120px;resize:vertical}
+.drop{border:2px dashed var(--line);border-radius:14px;padding:26px;text-align:center;color:var(--mute);cursor:pointer;transition:.15s;position:relative}
+.drop.on,.drop:hover{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 7%,transparent)}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.drop strong{color:var(--ink);display:block}
+.prev{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.prev div{position:relative;width:78px;height:78px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.prev img{width:100%;height:100%;object-fit:cover}
+.prev button{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;cursor:pointer;font-size:14px;line-height:1}
+.hint{font-size:13.5px;color:var(--mute)}
+.msg{grid-column:1/-1;border-radius:12px;padding:14px 16px;font-weight:500;display:none}
+.msg.err{display:block;background:#ffe9e9;color:#9b1c1c}
+.ok{display:none;grid-column:1/-1;text-align:center;padding:30px 10px}
+.ok h3{font-size:30px;margin-bottom:8px}
+form.sent>*:not(.ok){display:none}form.sent .ok{display:block}
+.hp{position:absolute;left:-9999px}
+footer{padding:36px 0 90px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:9px;background:#1fa855;color:#fff;text-decoration:none;font-weight:600;padding:13px 19px;border-radius:99px;box-shadow:0 12px 28px -8px rgba(31,168,85,.7)}
+.wa svg{width:22px;height:22px;fill:#fff}
+@media(max-width:860px){
+ .hero .wrap,.two,.formbox,.about{grid-template-columns:1fr}.pic{max-width:300px}
+ .grid{grid-template-columns:1fr 1fr}.stack{height:360px}
+ nav ul{display:none}section{padding:62px 0}
+}
+@media(max-width:560px){.grid{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:22px}.wa span{display:none}.wa{padding:14px}}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--sun));z-index:60}
+.btn.blue{background:linear-gradient(135deg,#1f4fff,#4a2fff);border-color:transparent;box-shadow:0 10px 24px -10px rgba(31,79,255,.7)}
+.hero{background:radial-gradient(900px 500px at 85% 0,rgba(111,139,255,.35),transparent),linear-gradient(160deg,#0a1a4d,#101f66 60%,#0a1535);color:#fff}
+.hero .lead,.hero .proof{color:#c5d2ff}.hero .btn.alt{color:#fff;border-color:rgba(255,255,255,.55)}
+nav ul a.on{color:var(--blue);font-weight:600}
+.menu{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:42px;height:42px;font-size:20px;color:var(--ink);cursor:pointer}
+.badge{position:absolute;top:12px;left:12px;z-index:2;font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:99px;background:rgba(10,26,77,.85);color:#fff;backdrop-filter:blur(4px)}
+.card{position:relative;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit}
+.card .shot{position:relative;background:linear-gradient(135deg,var(--c1),var(--c2))}.card .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.more{margin-top:auto;font-weight:600;color:var(--blue);font-size:15px}
+dialog{border:0;border-radius:24px;max-width:560px;width:calc(100% - 32px);padding:0;background:var(--card);color:var(--ink);box-shadow:0 40px 90px -20px rgba(0,0,0,.55)}
+dialog::backdrop{background:rgba(7,13,38,.7);backdrop-filter:blur(4px)}
+dialog .shot{height:210px;position:relative;overflow:hidden}dialog .shot img{width:100%;height:100%;object-fit:cover;object-position:top}dialog .bd{padding:26px 28px 30px}dialog h3{font-size:28px;margin-bottom:8px}
+dialog ul{margin:14px 0 22px 20px;color:var(--mute)}dialog .x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#0a1535;font-size:22px;cursor:pointer;z-index:3}
+.top{position:fixed;left:18px;bottom:18px;z-index:30;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s}
+.top.show{opacity:1;pointer-events:auto}
+.count{font-size:13px;color:var(--mute);text-align:right}
+input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
+@media(max-width:860px){.menu{display:block}nav ul{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--card);border-bottom:1px solid var(--line);padding:8px 22px;display:none}nav ul.open{display:flex}nav ul li a{display:block;padding:12px 0}.hero{padding-top:44px}}
+
+/* v3 additions */
+dialog{margin:auto;max-height:calc(100dvh - 32px);overflow:auto}
+.hero p.lead{color:#c5d2ff}
+.stack{height:440px}
+.win img{display:block;width:100%;height:178px;object-fit:cover;object-position:top}
+@keyframes f1{50%{transform:rotate(-3deg) translateY(-14px)}}
+@keyframes f2{50%{transform:rotate(2.5deg) translateY(14px)}}
+@keyframes f3{50%{transform:rotate(-1deg) translateY(-10px)}}
+.win:nth-child(1){animation:f1 6s ease-in-out infinite}
+.win:nth-child(2){animation:f2 7s ease-in-out infinite}
+.win:nth-child(3){animation:f3 5.5s ease-in-out infinite}
+.rhead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.rctl{display:flex;gap:8px;margin-bottom:34px}
+.rb{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+.rb:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.rv{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 20px;scrollbar-width:none}
+.rv::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 min(390px,86%);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin:0;display:flex;flex-direction:column;gap:14px}
+.rcard::before{content:"\201C";font:800 64px/.6 'Bricolage Grotesque',serif;color:var(--blue)}
+.rcard blockquote{margin:0;font-size:16.5px;line-height:1.65}
+.rcard figcaption{display:flex;gap:12px;align-items:center;margin-top:auto;padding-top:6px}
+.rcard figcaption b{display:block}.rcard small{color:var(--mute)}
+.av{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#4a2fff);color:#fff;display:grid;place-items:center;font-weight:700}
+.stars{color:var(--sun);letter-spacing:2px;font-size:18px}
+.rfoot{margin-top:10px}
+.faq{max-width:780px;margin:auto;display:grid;gap:12px}
+details.q{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:0 20px;transition:border-color .2s}
+details.q[open]{border-color:var(--blue)}
+details.q summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";font-size:24px;line-height:1;color:var(--blue);transition:transform .2s}
+details.q[open] summary::after{transform:rotate(45deg)}
+details.q p{color:var(--mute);padding:0 0 18px}
+
+.rp{max-width:660px;margin:48px auto 80px}.rp h1{font-size:clamp(32px,6vw,48px);margin-bottom:10px}.rp>p{color:var(--mute);margin-bottom:26px}
+.rp form{grid-template-columns:1fr}
+.sin{display:flex;gap:4px}.sin button{background:none;border:0;font-size:38px;line-height:1;cursor:pointer;color:var(--line);padding:2px 4px;transition:transform .12s}
+.sin button:hover{transform:scale(1.15)}.sin button.on{color:var(--sun)}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;color:var(--mute)}.chk input{width:auto;margin-top:4px}
+</style>
+</head><body>
+<div id="prog"></div>
+<header><div class="wrap"><nav aria-label="Main"><a class="logo" href="index.html">Harun<b>Design</b></a><a class="btn alt" href="index.html#reviews">← Back to website</a></nav></div></header>
+<main class="wrap"><div class="rp">
+ <h1>How was your experience?</h1>
+ <p>Thank you for working with HarunDesign. Your honest feedback helps other businesses decide. Reviews are checked before they appear on the website.</p>
+ <form id="rf" novalidate>
+  <div class="f"><label for="n">Your name</label><input id="n" name="name" required autocomplete="name"></div>
+  <div class="f"><label for="b">Business or website</label><input id="b" name="business" placeholder="e.g. Nonòs Restaurants" autocomplete="organization"></div>
+  <div class="f"><label id="rl">Your rating</label><div class="sin" id="sin" role="radiogroup" aria-labelledby="rl"></div></div>
+  <div class="f"><label for="t">Your review</label><textarea id="t" name="text" required minlength="30" maxlength="800" placeholder="What was it like working with Harun? How did the website help your business?"></textarea><div class="count" id="c">0 / 800</div></div>
+  <label class="chk"><input type="checkbox" id="ok"> I agree that my name, business and review may be shown on the HarunDesign website.</label>
+  <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="msg" id="msg" role="alert"></div>
+  <button class="btn blue" type="submit" id="go">Submit my review</button>
+  <div class="ok" role="status"><h3>Thank you!</h3><p>Your review was received. It will appear on the website once it has been approved.</p><p style="margin-top:18px"><a class="btn alt" href="index.html">Back to website</a></p></div>
+ </form>
+</div></main>
+<script src="config.js"></script>
+<script>
+const { SHEET_URL = "", WEB3FORMS_KEY = "", EMAIL = "harundesign.web@gmail.com" } = window.HD || {};
+const f = document.getElementById('rf'), msg = document.getElementById('msg'), go = document.getElementById('go'), t = document.getElementById('t');
+let rating = 0;
+const sin = document.getElementById('sin');
+for (let i = 1; i <= 5; i++) { const b = document.createElement('button'); b.type = 'button'; b.textContent = '★'; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', 'false'); b.setAttribute('aria-label', i + ' star' + (i > 1 ? 's' : '')); b.onclick = () => set(i); sin.append(b); }
+function set(n) { rating = n; [...sin.children].forEach((b, i) => { b.classList.toggle('on', i < n); b.setAttribute('aria-checked', i + 1 === n); }); }
+t.addEventListener('input', () => document.getElementById('c').textContent = t.value.length + ' / 800');
+const err = m => { msg.textContent = m; msg.className = m ? 'msg err' : 'msg'; };
+const abortIn = ms => { const c = new AbortController(); setTimeout(() => c.abort(), ms); return c.signal; };
+f.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (f._honey && f._honey.value) return;
+  const d = { type: 'review', name: f.name.value.trim(), business: f.business.value.trim(), rating, text: t.value.trim() };
+  if (!d.name) return err('Please enter your name.');
+  if (!rating) return err('Please choose a star rating.');
+  if (d.text.length < 30) return err('Please write at least 30 characters.');
+  if (!document.getElementById('ok').checked) return err('Please tick the box to allow your review to be shown.');
+  if (!SHEET_URL && !WEB3FORMS_KEY) return err('Reviews are not connected yet. Please contact ' + EMAIL + '.');
+  err(''); go.disabled = true; go.textContent = 'Sending…';
+  const jobs = [];
+  if (SHEET_URL) jobs.push((async () => { const r = await fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d), signal: abortIn(30000) }); const j = await r.json().catch(() => ({ ok: r.ok })); return r.ok && j.ok !== false; })());
+  if (WEB3FORMS_KEY) jobs.push((async () => { const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, signal: abortIn(15000), body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: 'New website review to approve from ' + d.name, from_name: 'HarunDesign reviews', name: d.name, business: d.business, rating: d.rating + ' / 5', review: d.text }) }); const j = await r.json().catch(() => ({})); return r.ok && j.success === true; })());
+  const first = new Promise(res => { let left = jobs.length; jobs.forEach(p => p.then(v => { if (v) res(true); else if (--left === 0) res(false); }).catch(() => { if (--left === 0) res(false); })); });
+  const ok = await Promise.race([first, new Promise(r => setTimeout(() => r(false), 40000))]);
+  if (ok) { f.classList.add('sent'); scrollTo({ top: 0, behavior: 'smooth' }); }
+  else { err('Sorry, your review could not be sent. Please try again, or email it to ' + EMAIL + '.'); go.disabled = false; go.textContent = 'Try again'; }
+});
+</script></body></html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HarunDesign · WordPress &amp; Shopify Websites</title>
+<meta name="description" content="HarunDesign builds fast, trustworthy WordPress, WooCommerce and Shopify websites for growing businesses.">
+<meta property="og:title" content="HarunDesign · WordPress &amp; Shopify Websites">
+<meta property="og:image" content="harun-portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3ff;--ink:#0a1535;--mute:#4a5a85;--line:#d3ddf5;--card:#fff;--blue:#1f4fff;--navy:#0a1a4d;--sun:#e8c26b;--mint:#2fb7ff;--r:18px}
+@media(prefers-color-scheme:dark){:root{--bg:#070d26;--ink:#eaf0ff;--mute:#9fb0dd;--line:#1c2a5c;--card:#0e1740;--blue:#6f8bff}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:84px 0}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font:800 22px 'Bricolage Grotesque';text-decoration:none}.logo b{color:var(--blue)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav ul a{text-decoration:none;font-weight:500;color:var(--mute)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font:600 16px Figtree;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.hero{padding:70px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+h1{font-size:clamp(40px,6vw,70px);font-weight:800}
+.hero p.lead{font-size:20px;color:var(--mute);margin:22px 0 30px;max-width:30em}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.proof{display:flex;gap:26px;margin-top:38px;color:var(--mute);font-size:15px;flex-wrap:wrap}
+.proof span{display:flex;align-items:center;gap:8px}.proof i{width:9px;height:9px;border-radius:50%;background:var(--mint)}
+/* browser mockups */
+.stack{position:relative;height:420px}
+.win{position:absolute;width:76%;border-radius:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 50px -22px rgba(22,26,51,.45);overflow:hidden}
+.win:nth-child(1){top:0;left:0;transform:rotate(-3deg)}
+.win:nth-child(2){top:90px;right:0;transform:rotate(2.5deg)}
+.win:nth-child(3){bottom:0;left:12%;transform:rotate(-1deg);animation:rise .9s .1s both}
+@keyframes rise{from{transform:translateY(34px);opacity:0}}
+.bar{display:flex;gap:5px;padding:9px 11px;border-bottom:1px solid var(--line)}
+.bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.shot{height:150px;padding:14px;display:grid;gap:8px;align-content:start;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.shot b{display:block;height:14px;width:62%;border-radius:4px;background:rgba(255,255,255,.92)}
+.shot u{display:block;height:7px;width:84%;border-radius:4px;background:rgba(255,255,255,.5)}
+.shot u+u{width:58%}
+.shot em{display:block;height:20px;width:30%;border-radius:99px;background:var(--sun)}
+.shot .g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
+.shot .g s{height:34px;border-radius:6px;background:rgba(255,255,255,.28)}
+/* work */
+.head{max-width:640px;margin-bottom:34px}
+h2{font-size:clamp(32px,4.5vw,50px);font-weight:800}
+.head p{color:var(--mute);margin-top:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{font:500 15px Figtree;padding:9px 18px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(22,26,51,.5)}
+.card .shot{height:190px}
+.card .in{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:22px}.card p{color:var(--mute);font-size:15.5px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.tags span{font-size:13px;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--blue);font-weight:600}
+.card.hide{display:none}
+.note{margin-top:22px;font-size:14px;color:var(--mute)}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.pic{position:relative;max-width:380px}
+.pic::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;background:linear-gradient(135deg,var(--blue),var(--mint));opacity:.9}
+.pic img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;border:4px solid var(--card)}
+.about p{color:var(--mute);margin-top:14px;max-width:34em}
+.about h2{margin-bottom:4px}
+.skills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 26px}
+.skills span{padding:6px 14px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font-size:14.5px;font-weight:500}
+/* services + process */
+.alt-bg{background:var(--card);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.svc{display:grid;gap:14px;margin-top:6px}
+.svc div{padding:18px 20px;border-radius:14px;border:1px solid var(--line);background:var(--bg)}
+.svc h3{font-size:19px;margin-bottom:4px}.svc p{color:var(--mute);font-size:15.5px}
+ol.steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:0;border-left:3px solid var(--line);margin-left:12px}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 26px 30px}
+ol.steps li::before{content:counter(s);position:absolute;left:-17px;top:0;width:31px;height:31px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:700 14px Figtree}
+ol.steps h3{font-size:20px}ol.steps p{color:var(--mute);font-size:15.5px}
+/* form */
+.formbox{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.side p{color:var(--mute);margin:14px 0 24px}
+.side a.btn{margin:0 8px 10px 0}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}.f.full{grid-column:1/-1}
+label{font-weight:600;font-size:15px}
+input,select,textarea{font:400 16px Figtree;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--blue) 20%,transparent)}
+textarea{min-height:120px;resize:vertical}
+.drop{border:2px dashed var(--line);border-radius:14px;padding:26px;text-align:center;color:var(--mute);cursor:pointer;transition:.15s;position:relative}
+.drop.on,.drop:hover{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 7%,transparent)}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.drop strong{color:var(--ink);display:block}
+.prev{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.prev div{position:relative;width:78px;height:78px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.prev img{width:100%;height:100%;object-fit:cover}
+.prev button{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;cursor:pointer;font-size:14px;line-height:1}
+.hint{font-size:13.5px;color:var(--mute)}
+.msg{grid-column:1/-1;border-radius:12px;padding:14px 16px;font-weight:500;display:none}
+.msg.err{display:block;background:#ffe9e9;color:#9b1c1c}
+.ok{display:none;grid-column:1/-1;text-align:center;padding:30px 10px}
+.ok h3{font-size:30px;margin-bottom:8px}
+form.sent>*:not(.ok){display:none}form.sent .ok{display:block}
+.hp{position:absolute;left:-9999px}
+footer{padding:36px 0 90px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:9px;background:#1fa855;color:#fff;text-decoration:none;font-weight:600;padding:13px 19px;border-radius:99px;box-shadow:0 12px 28px -8px rgba(31,168,85,.7)}
+.wa svg{width:22px;height:22px;fill:#fff}
+@media(max-width:860px){
+ .hero .wrap,.two,.formbox,.about{grid-template-columns:1fr}.pic{max-width:300px}
+ .grid{grid-template-columns:1fr 1fr}.stack{height:360px}
+ nav ul{display:none}section{padding:62px 0}
+}
+@media(max-width:560px){.grid{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:22px}.wa span{display:none}.wa{padding:14px}}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--sun));z-index:60}
+.btn.blue{background:linear-gradient(135deg,#1f4fff,#4a2fff);border-color:transparent;box-shadow:0 10px 24px -10px rgba(31,79,255,.7)}
+.hero{background:radial-gradient(900px 500px at 85% 0,rgba(111,139,255,.35),transparent),linear-gradient(160deg,#0a1a4d,#101f66 60%,#0a1535);color:#fff}
+.hero .lead,.hero .proof{color:#c5d2ff}.hero .btn.alt{color:#fff;border-color:rgba(255,255,255,.55)}
+nav ul a.on{color:var(--blue);font-weight:600}
+.menu{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:42px;height:42px;font-size:20px;color:var(--ink);cursor:pointer}
+.badge{position:absolute;top:12px;left:12px;z-index:2;font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:99px;background:rgba(10,26,77,.85);color:#fff;backdrop-filter:blur(4px)}
+.card{position:relative;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit}
+.card .shot{position:relative;background:linear-gradient(135deg,var(--c1),var(--c2))}.card .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.more{margin-top:auto;font-weight:600;color:var(--blue);font-size:15px}
+dialog{border:0;border-radius:24px;max-width:560px;width:calc(100% - 32px);padding:0;background:var(--card);color:var(--ink);box-shadow:0 40px 90px -20px rgba(0,0,0,.55)}
+dialog::backdrop{background:rgba(7,13,38,.7);backdrop-filter:blur(4px)}
+dialog .shot{height:210px;position:relative;overflow:hidden}dialog .shot img{width:100%;height:100%;object-fit:cover;object-position:top}dialog .bd{padding:26px 28px 30px}dialog h3{font-size:28px;margin-bottom:8px}
+dialog ul{margin:14px 0 22px 20px;color:var(--mute)}dialog .x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#0a1535;font-size:22px;cursor:pointer;z-index:3}
+.top{position:fixed;left:18px;bottom:18px;z-index:30;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s}
+.top.show{opacity:1;pointer-events:auto}
+.count{font-size:13px;color:var(--mute);text-align:right}
+input:invalid:not(:placeholder-shown):not(:focus){border-color:#d33}
+@media(max-width:860px){.menu{display:block}nav ul{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--card);border-bottom:1px solid var(--line);padding:8px 22px;display:none}nav ul.open{display:flex}nav ul li a{display:block;padding:12px 0}.hero{padding-top:44px}}
+
+/* v3 additions */
+dialog{margin:auto;max-height:calc(100dvh - 32px);overflow:auto}
+.hero p.lead{color:#c5d2ff}
+.stack{height:440px}
+.win img{display:block;width:100%;height:178px;object-fit:cover;object-position:top}
+@keyframes f1{50%{transform:rotate(-3deg) translateY(-14px)}}
+@keyframes f2{50%{transform:rotate(2.5deg) translateY(14px)}}
+@keyframes f3{50%{transform:rotate(-1deg) translateY(-10px)}}
+.win:nth-child(1){animation:f1 6s ease-in-out infinite}
+.win:nth-child(2){animation:f2 7s ease-in-out infinite}
+.win:nth-child(3){animation:f3 5.5s ease-in-out infinite}
+.rhead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.rctl{display:flex;gap:8px;margin-bottom:34px}
+.rb{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+.rb:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.rv{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 20px;scrollbar-width:none}
+.rv::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 min(390px,86%);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin:0;display:flex;flex-direction:column;gap:14px}
+.rcard::before{content:"\201C";font:800 64px/.6 'Bricolage Grotesque',serif;color:var(--blue)}
+.rcard blockquote{margin:0;font-size:16.5px;line-height:1.65}
+.rcard figcaption{display:flex;gap:12px;align-items:center;margin-top:auto;padding-top:6px}
+.rcard figcaption b{display:block}.rcard small{color:var(--mute)}
+.av{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#4a2fff);color:#fff;display:grid;place-items:center;font-weight:700}
+.stars{color:var(--sun);letter-spacing:2px;font-size:18px}
+.rfoot{margin-top:10px}
+.faq{max-width:780px;margin:auto;display:grid;gap:12px}
+details.q{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:0 20px;transition:border-color .2s}
+details.q[open]{border-color:var(--blue)}
+details.q summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";font-size:24px;line-height:1;color:var(--blue);transition:transform .2s}
+details.q[open] summary::after{transform:rotate(45deg)}
+details.q p{color:var(--mute);padding:0 0 18px}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header><div class="wrap"><nav aria-label="Main">
+ <a class="logo" href="#top">Harun<b>Design</b></a>
+ <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
+ <a class="btn blue" href="#start">Start a project</a><button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
+</nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <h1>Websites that earn your customers’ trust before they call.</h1>
+  <p class="lead">I design and build fast, mobile-first WordPress, WooCommerce and Shopify websites for businesses that want more enquiries and more sales.</p>
+  <div class="cta"><a class="btn blue" href="#start">Tell me about your project</a><a class="btn alt" href="#work">See my work</a></div>
+  <div class="proof"><span><i></i>Mobile-first design</span><span><i></i>Fast loading</span><span><i></i>Clear communication</span></div>
+ </div>
+ <div class="stack" aria-hidden="true">
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="work-1.jpg" alt="" width="480" height="300"></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="work-3.jpg" alt="" width="480" height="300"></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="work-2.jpg" alt="" width="480" height="300"></div>
+ </div>
+</div></div>
+
+<section id="work"><div class="wrap">
+ <div class="head"><h2>Brands I’ve worked with</h2><p>Websites for businesses in law, fashion, hospitality, retail and property. Tap any project for details.</p></div>
+ <div class="tabs" role="group" aria-label="Filter projects">
+  <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="wp">WordPress</button><button aria-pressed="false" data-f="shop">Online stores</button><button aria-pressed="false" data-f="biz">Business sites</button>
+ </div>
+ <div class="grid" id="grid">
+<button class="card" data-t="wp biz" data-i="0" aria-haspopup="dialog"><div class="shot" style="--c1:#0a1a4d;--c2:#3d63ff"><img src="work-1.jpg" alt="West End Consultants website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>West End Consultants</h3><p>UK immigration consultancy website with services, FAQs, reviews and an enquiry form.</p><div class="tags"><span>WordPress</span><span>Elementor</span><span>Enquiry forms</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="shop" data-i="1" aria-haspopup="dialog"><div class="shot" style="--c1:#1b2f8f;--c2:#6f8bff"><img src="work-2.jpg" alt="G7 Clothing website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>G7 Clothing</h3><p>Wholesale women’s fashion store with collections, product carousels and trade accounts.</p><div class="tags"><span>Online store</span><span>Collections</span><span>Wholesale</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="wp biz" data-i="2" aria-haspopup="dialog"><div class="shot" style="--c1:#0b5cad;--c2:#38b6ff"><img src="work-3.jpg" alt="Nonòs website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Nonòs</h3><p>Greek Mediterranean restaurant website with locations, menus and table booking.</p><div class="tags"><span>WordPress</span><span>Reservations</span><span>Local SEO</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="wp shop" data-i="3" aria-haspopup="dialog"><div class="shot" style="--c1:#2a1f8f;--c2:#8b6bff"><img src="work-4.jpg" alt="Premium UK Peptides website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Premium UK Peptides</h3><p>WooCommerce-style online store with product collections and certificate-of-analysis pages.</p><div class="tags"><span>WooCommerce</span><span>Product catalogue</span><span>Payments</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="wp biz" data-i="4" aria-haspopup="dialog"><div class="shot" style="--c1:#06356b;--c2:#2bb3d8"><img src="work-5.jpg" alt="Real Estates website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Real Estates</h3><p>North London estate agent website with property search, listings and enquiry forms.</p><div class="tags"><span>WordPress</span><span>Listings</span><span>Lead forms</span></div><span class="more">View details</span></div></button>
+<button class="card" data-t="shop" data-i="5" aria-haspopup="dialog"><div class="shot" style="--c1:#0a1a4d;--c2:#e8c26b"><img src="work-6.jpg" alt="Harrods website homepage" loading="lazy" onerror="this.remove()"></div><div class="in"><h3>Harrods</h3><p>Luxury online department store with designer collections, gift guides and editorial stories.</p><div class="tags"><span>Online store</span><span>Luxury retail</span><span>E-commerce</span></div><span class="more">View details</span></div></button>
+</div>
+ <p class="note">Brand names, logos and website designs belong to their owners. Tap a project to see the live site.</p>
+</div></section>
+
+<section id="about"><div class="wrap about">
+ <div class="pic"><img src="harun-portrait.jpg?v=4" width="960" height="1200" loading="lazy" alt="Portrait of Harun, the developer behind HarunDesign"></div>
+ <div>
+  <h2>Hi, I’m Harun, the developer behind HarunDesign.</h2>
+  <p>I’m a web designer and Shopify store expert who now builds WordPress and WooCommerce websites too. I work directly with every client, so you talk to the person building your site, not an account manager.</p>
+  <p>My goal is simple: a website that looks professional, loads fast on a phone, and makes it easy for your customers to contact or buy from you.</p>
+  <div class="skills"><span>WordPress</span><span>WooCommerce</span><span>Shopify</span><span>UI &amp; UX design</span><span>Speed &amp; SEO basics</span></div>
+  <a class="btn blue" href="#start">Work with me</a>
+ </div>
+</div></section>
+
+<section id="services" class="alt-bg"><div class="wrap two">
+ <div>
+  <div class="head"><h2>What I can do for you</h2></div>
+  <div class="svc">
+   <div><h3>New WordPress website</h3><p>Designed around your brand, ready to edit yourself, and set up for Google.</p></div>
+   <div><h3>Online store</h3><p>WooCommerce or Shopify, with payments, shipping and product pages that sell.</p></div>
+   <div><h3>Redesign &amp; speed fix</h3><p>Make an old, slow or broken site look current and load fast on mobile.</p></div>
+   <div><h3>Care plan</h3><p>Monthly updates, backups, security and small changes so you never worry.</p></div>
+  </div>
+ </div>
+ <div id="process">
+  <div class="head"><h2>How we work together</h2></div>
+  <ol class="steps">
+   <li><h3>Send your brief</h3><p>Share your goals and upload sites you like. It takes about five minutes.</p></li>
+   <li><h3>Plan &amp; quote</h3><p>You get a clear scope, price and timeline before any work starts.</p></li>
+   <li><h3>Design &amp; build</h3><p>You review a preview link and request changes along the way.</p></li>
+   <li><h3>Launch &amp; support</h3><p>I launch, test on every device and stay available after go-live.</p></li>
+  </ol>
+ </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+ <div class="rhead"><div class="head"><h2>What clients say</h2><p>Feedback from businesses I have built websites for.</p></div>
+ <div class="rctl"><button class="rb" id="rprev" aria-label="Previous reviews">←</button><button class="rb" id="rnext" aria-label="Next reviews">→</button></div></div>
+ <div class="rv" id="rv" tabindex="0" aria-label="Client reviews"></div>
+ <div class="rfoot"><a class="btn alt" href="review.html">Worked with me? Leave a review</a></div>
+</div></section>
+
+<section id="faq" class="alt-bg"><div class="wrap">
+ <div class="head"><h2>Frequently asked questions</h2></div>
+ <div class="faq">
+<details class="q"><summary>How much does a website cost?</summary><p>It depends on the number of pages and features. Send me your brief and I will reply with a clear quote, so you know the full price before any work starts.</p></details>
+<details class="q"><summary>How long will it take?</summary><p>Most business websites take 2 to 4 weeks. Online stores with many products can take longer. I give you a timeline in the quote.</p></details>
+<details class="q"><summary>Do you work with WordPress and Shopify?</summary><p>Yes. I build WordPress and WooCommerce sites, Shopify stores, and I can move a store from one platform to the other.</p></details>
+<details class="q"><summary>Will my website work on phones?</summary><p>Yes. Every site is designed mobile-first and tested on phones, tablets and computers before launch.</p></details>
+<details class="q"><summary>What do you need from me to start?</summary><p>Your business details, logo, any text and photos you have, and a few websites you like. You can upload those inspiration samples in the project brief.</p></details>
+<details class="q"><summary>Can I edit the website myself after launch?</summary><p>Yes. I build it so you can update text, images and products yourself, and I show you how.</p></details>
+<details class="q"><summary>Do you offer support after launch?</summary><p>Yes. I stay available after go-live, and monthly care plans cover updates, backups, security and small changes.</p></details>
+<details class="q"><summary>How do payments work?</summary><p>Payment terms are agreed in your quote. Usually a deposit starts the project and the balance is paid when you are happy with the finished website.</p></details>
+ </div>
+</div></section>
+
+<section id="start"><div class="wrap formbox">
+ <div class="side">
+  <h2>Let’s plan your website</h2>
+  <p>Fill in the brief and attach screenshots of websites you like. I reply within one working day with next steps.</p>
+  <a class="btn blue" id="waBtn" href="https://wa.me/2348101628877?text=Hi%20HarunDesign%2C%20I%20want%20a%20website." target="_blank" rel="noopener">Chat on WhatsApp</a>
+  <a class="btn alt" href="mailto:harundesign.web@gmail.com">Email me</a>
+ </div>
+ <form id="brief" novalidate>
+  <div class="f"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
+  <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+  <div class="f"><label for="phone">WhatsApp number</label><input id="phone" name="phone" type="tel" placeholder="+234…" autocomplete="tel"></div>
+  <div class="f"><label for="biz">Business name</label><input id="biz" name="business"></div>
+  <div class="f"><label for="type">What do you need?</label><select id="type" name="project_type" required><option value="">Choose one</option><option>New WordPress website</option><option>Online store (WooCommerce)</option><option>Shopify store</option><option>Redesign or speed fix</option><option>Store migration</option><option>Monthly care plan</option><option>Not sure yet</option></select></div>
+  <div class="f"><label for="budget">Budget range</label><select id="budget" name="budget"><option value="">Select</option><option>Under $300</option><option>$300 – $800</option><option>$800 – $2,000</option><option>$2,000+</option></select></div>
+  <div class="f"><label for="when">When do you need it?</label><input id="when" name="deadline" placeholder="e.g. within 3 weeks"></div>
+  <div class="f"><label for="links">Websites you like (links)</label><input id="links" name="reference_links" placeholder="https://…"></div>
+  <div class="f full"><label for="details">Tell me about the project</label><textarea id="details" name="details" required placeholder="What does your business do, who are your customers, and what should the website help you achieve?"></textarea></div>
+  <div class="f full"><label for="files">Design samples you want your website to look like</label>
+   <div class="drop" id="drop"><input id="files" type="file" accept="image/*,.pdf" multiple><strong>Drop images here or tap to upload</strong>Screenshots, logos or inspiration. Up to 6 files, 8 MB total.</div>
+   <div class="prev" id="prev"></div></div>
+  <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="msg" id="msg" role="alert"></div>
+  <div class="f full"><button class="btn blue" type="submit" id="send">Send project brief</button></div>
+  <div class="ok" role="status"><h3>Brief received. Thank you!</h3><p>I’ll review it and reply to you within one working day.</p></div>
+ </form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> HarunDesign. All rights reserved.</span><span><a href="mailto:harundesign.web@gmail.com">harundesign.web@gmail.com</a> · <a href="https://wa.me/2348101628877">+234 810 162 8877</a> · <a href="review.html">Leave a review</a></span></div></footer>
+
+<a class="wa" href="https://wa.me/2348101628877?text=Hi%20HarunDesign%2C%20I%20want%20a%20website." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+ <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg><span>Chat on WhatsApp</span></a>
+
+<dialog id="dlg" aria-labelledby="dt"><button class="x" aria-label="Close">×</button><div class="shot" id="dshot"></div><div class="bd"><h3 id="dt"></h3><p id="dd"></p><ul id="dl"></ul><a class="btn blue" href="#start" id="dgo">Start a similar project</a> <a class="btn alt" id="dlive" target="_blank" rel="noopener">Visit live site</a></div></dialog>
+<button class="top" aria-label="Back to top">↑</button>
+<script src="config.js"></script>
+<script>
+/* ===== SETTINGS ===== */
+const { SHEET_URL = "", WEB3FORMS_KEY = "", EMAIL = "harundesign.web@gmail.com", WHATSAPP = "2348101628877" } = window.HD || {};  // set in config.js
+/* ==================== */
+
+const WORK=[["West End Consultants", "UK immigration consultancy website with services, FAQs, reviews and an enquiry form.", ["Service pages for visas and sponsor licences", "Client reviews and FAQs", "Enquiry form for new clients"], "https://www.westendconsultants.co.uk/"], ["G7 Clothing", "Wholesale women’s fashion store with collections, product carousels and trade accounts.", ["Collection and product browsing", "Trade account sign-up", "Customer reviews"], "http://g7clothing.com/"], ["Nonòs", "Greek Mediterranean restaurant website with locations, menus and table booking.", ["Location pages for each restaurant", "Table booking and menus", "Guest reviews and newsletter sign-up"], "http://nonos.co.uk/"], ["Premium UK Peptides", "WooCommerce-style online store with product collections and certificate-of-analysis pages.", ["Product collections and filters", "Articles and FAQs", "Secure checkout"], "https://premiumukpeptides.co.uk/"], ["Real Estates", "North London estate agent website with property search, listings and enquiry forms.", ["Property search with filters", "Listing galleries", "Subscribe for property updates"], "http://www.realestates-wsp.co.uk/"], ["Harrods", "Luxury online department store with designer collections, gift guides and editorial stories.", ["Designer and category navigation", "Product carousels and editorial stories", "Gift guides"], "https://www.harrods.com/"]];
+const dlg=document.getElementById('dlg');
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>{const w=WORK[c.dataset.i];
+ document.getElementById('dt').innerHTML=w[0];document.getElementById('dd').innerHTML=w[1];
+ document.getElementById('dlive').href=w[3];document.getElementById('dl').innerHTML=w[2].map(x=>'<li>'+x+'</li>').join('');
+ document.getElementById('dshot').style.cssText=c.querySelector('.shot').getAttribute('style');
+ const im=c.querySelector('.shot img');const old=document.querySelector('#dshot img');if(old)old.remove();
+ if(im){const n=im.cloneNode();n.style.cssText='';document.getElementById('dshot').append(n);}
+ dlg.showModal();}));
+dlg.querySelector('.x').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+document.getElementById('dgo').addEventListener('click',()=>dlg.close());
+// progress, back-to-top, active nav, mobile menu
+const prog=document.getElementById('prog'),topb=document.querySelector('.top');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';topb.classList.toggle('show',h.scrollTop>700)},{passive:true});
+topb.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const links=[...document.querySelectorAll('nav ul a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['work','about','services','reviews','faq','start'].forEach(id=>{const el=document.getElementById(id);el&&io.observe(el)});
+const mb=document.querySelector('.menu'),ul=document.querySelector('nav ul');
+mb.onclick=()=>{const o=ul.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+ul.addEventListener('click',()=>ul.classList.remove('open'));
+// live character counter + remembered draft
+const det=document.getElementById('details');const cnt=document.createElement('div');cnt.className='count';det.after(cnt);
+const upd=()=>{cnt.textContent=det.value.length+' characters';try{sessionStorage.setItem('hd_draft',det.value)}catch(e){}};
+try{det.value=sessionStorage.getItem('hd_draft')||''}catch(e){}det.addEventListener('input',upd);upd();
+if(/[?&]sent=1/.test(location.search)){const fm=document.getElementById('brief');fm.classList.add('sent');history.replaceState(null,'',location.pathname+'#start')}
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ===== Reviews =====
+const abortIn = ms => { const c = new AbortController(); setTimeout(() => c.abort(), ms); return c.signal; };
+const rv = document.getElementById('rv');
+function reviewCard(r){
+  const f = document.createElement('figure'); f.className = 'rcard';
+  const n = Math.max(0, Math.min(5, +r.rating || 0));
+  f.innerHTML = (n ? '<div class="stars" role="img" aria-label="' + n + ' out of 5 stars">' + '★'.repeat(n) + '☆'.repeat(5 - n) + '</div>' : '') + '<blockquote></blockquote><figcaption><span class="av"></span><div><b></b><small></small></div></figcaption>';
+  f.querySelector('blockquote').textContent = r.text; f.querySelector('b').textContent = r.name; f.querySelector('small').textContent = r.sub || 'Client'; f.querySelector('.av').textContent = (r.name || '?').trim().charAt(0).toUpperCase();
+  return f;
+}
+[{"name": "West End Consultants", "sub": "Immigration consultancy website", "text": "Harun did a great job bringing our website together. The design looks professional, the services are clearly presented, and the enquiry process is much easier for visitors. Communication throughout the project was smooth."}, {"name": "G7 Clothing", "sub": "Wholesale fashion store", "text": "I love how the store turned out. The product collections are well organised, the layout looks modern, and the shopping experience feels smooth. Harun understood the vision and delivered a professional design."}, {"name": "Nonòs Restaurants", "sub": "Restaurant website", "text": "Harun created a beautiful website that captures the atmosphere of our restaurant. Our menus, locations and booking information are easy to find. The overall presentation is clean, welcoming and professional."}, {"name": "Premium UK Peptides", "sub": "Online store", "text": "The website has a clean, premium look that makes the product catalogue easy to explore. I particularly like how the categories and certificate information are organised. Harun paid attention to the details."}, {"name": "Real Estates", "sub": "Property website", "text": "Working with Harun was a good experience. The website gives our property business a more professional online presence. The property sections and enquiry features make it easier for potential clients to navigate and get in touch."}, {"name": "Harrods", "sub": "Luxury e-commerce", "text": "The website design delivers the premium shopping experience we wanted. The product categories, visuals and overall layout give it a polished feel. Harun demonstrated a good understanding of modern e-commerce design."}].forEach(r => rv.append(reviewCard(r)));
+if (SHEET_URL) fetch(SHEET_URL + '?action=reviews', { signal: abortIn(12000) }).then(r => r.json()).then(j => (j.reviews || []).forEach(x => rv.append(reviewCard({ name: x.name, sub: x.business, rating: x.rating, text: x.text })))).catch(() => {});
+const step = d => rv.scrollBy({ left: d * Math.min(rv.clientWidth * .85, 420), behavior: 'smooth' });
+document.getElementById('rprev').onclick = () => step(-1); document.getElementById('rnext').onclick = () => step(1);
+// FAQ: one open at a time
+document.querySelectorAll('details.q').forEach(d => d.addEventListener('toggle', () => { if (d.open) document.querySelectorAll('details.q').forEach(o => { if (o !== d) o.open = false; }); }));
+// Portfolio filter
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  const f = b.dataset.f;
+  document.querySelectorAll('#grid .card').forEach(c => c.classList.toggle('hide', f !== 'all' && !c.dataset.t.split(' ').includes(f)));
+}));
+
+// File handling
+const MAX_FILES = 6, MAX_BYTES = 8 * 1024 * 1024;
+let files = [];
+const fin = document.getElementById('files'), prev = document.getElementById('prev'), drop = document.getElementById('drop'), msg = document.getElementById('msg');
+function showErr(t){ msg.textContent = t; msg.className = t ? 'msg err' : 'msg'; }
+function addFiles(list){
+  for (const f of list) {
+    if (files.length >= MAX_FILES) { showErr('You can upload up to 6 files.'); break; }
+    if (files.reduce((s, x) => s + x.size, f.size) > MAX_BYTES) { showErr('Files are over 8 MB in total. Please upload smaller images.'); break; }
+    files.push(f); showErr('');
+  }
+  render();
+}
+function render(){
+  prev.innerHTML = '';
+  files.forEach((f, i) => {
+    const d = document.createElement('div');
+    if (f.type.startsWith('image/')) { const im = new Image(); im.alt = f.name; im.src = URL.createObjectURL(f); d.append(im); }
+    else { d.style.cssText = 'display:grid;place-items:center;font-size:12px;padding:4px;text-align:center'; d.textContent = f.name.slice(0, 14); }
+    const x = document.createElement('button'); x.type = 'button'; x.setAttribute('aria-label', 'Remove ' + f.name); x.textContent = '×';
+    x.onclick = () => { files.splice(i, 1); render(); };
+    d.append(x); prev.append(d);
+  });
+}
+fin.addEventListener('change', () => { addFiles(fin.files); fin.value = ''; });
+['dragenter', 'dragover'].forEach(e => drop.addEventListener(e, ev => { ev.preventDefault(); drop.classList.add('on'); }));
+['dragleave', 'drop'].forEach(e => drop.addEventListener(e, ev => { ev.preventDefault(); drop.classList.remove('on'); }));
+drop.addEventListener('drop', ev => addFiles(ev.dataTransfer.files));
+
+const toB64 = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(f); });
+
+// Submit
+document.getElementById('brief').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.target, btn = document.getElementById('send');
+  if (form._honey && form._honey.value) return;
+  const v = n => form.elements[n].value.trim();
+  if (!v('name') || !/^\S+@\S+\.\S+$/.test(v('email')) || !v('project_type') || !v('details')) { showErr('Please fill in your name, a valid email, what you need, and the project details.'); return; }
+  showErr(''); btn.disabled = true; btn.textContent = 'Sending…';
+  const data = { name: v('name'), email: v('email'), phone: v('phone'), business: v('business'), project_type: v('project_type'), budget: v('budget'), deadline: v('deadline'), reference_links: v('reference_links'), details: v('details'), page: location.href };
+  let note = '';
+  const T = ms => { const c = new AbortController(); setTimeout(() => c.abort(), ms); return c.signal; };
+  const jobs = [];
+  // Every channel runs at the same time; the form succeeds as soon as ANY one works.
+  if (SHEET_URL) jobs.push((async () => {   // Google Sheet + Drive + email via Apps Script
+    const payload = { ...data, files: await Promise.all(files.map(async f => ({ name: f.name, type: f.type, data: await toB64(f) }))) };
+    const r = await fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload), signal: T(40000) });
+    const j = await r.json().catch(() => ({ ok: r.ok }));
+    return r.ok && j.ok !== false;
+  })());
+  if (WEB3FORMS_KEY) jobs.push((async () => {  // Email via Web3Forms
+    const w = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, signal: T(15000),
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: 'New project brief from ' + data.name, from_name: 'HarunDesign website', ...data, uploaded_files: files.map(f => f.name).join(', ') || 'none' }) });
+    const wj = await w.json().catch(() => ({}));
+    return w.ok && wj.success === true;
+  })());
+  jobs.push((async () => {                      // Email via FormSubmit (last resort)
+    const fs = await fetch('https://formsubmit.co/ajax/' + EMAIL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, signal: T(12000),
+      body: JSON.stringify({ ...data, uploaded_files: files.map(f => f.name).join(', ') || 'none', _subject: 'New project brief from ' + data.name, _template: 'table', _captcha: 'false' }) });
+    const j = await fs.json().catch(() => ({}));
+    if (/activat/i.test(j.message || '')) note = 'Almost there: open the activation email FormSubmit sent to ' + EMAIL + ', click the link, then send again.';
+    return fs.ok && String(j.success) !== 'false';
+  })());
+  const first = new Promise(res => { let left = jobs.length; jobs.forEach(p => p.then(v => { if (v) res(true); else if (--left === 0) res(false); }).catch(err => { console.warn('Channel failed', err); if (--left === 0) res(false); })); });
+  const ok = await Promise.race([first, new Promise(r => setTimeout(() => r(false), 45000))]);
+  if (ok) { form.classList.add('sent'); form.scrollIntoView({ behavior: 'smooth', block: 'center' }); files = []; render(); }
+  else {
+    const t = encodeURIComponent('Hi HarunDesign, I’m ' + data.name + '. I need: ' + data.project_type + '. ' + data.details);
+    showErr(note || ('Sorry, the form could not send. Please tap “Chat on WhatsApp” instead, or email ' + EMAIL + '.'));
+    document.getElementById('waBtn').href = 'https://wa.me/' + WHATSAPP + '?text=' + t;
+    const body = encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\nWhatsApp: ' + data.phone + '\nBusiness: ' + data.business + '\nProject: ' + data.project_type + '\nBudget: ' + data.budget + '\nDeadline: ' + data.deadline + '\nLinks: ' + data.reference_links + '\n\n' + data.details);
+    msg.insertAdjacentHTML('beforeend', '<br><a href="mailto:' + EMAIL + '?subject=' + encodeURIComponent('New project brief from ' + data.name) + '&body=' + body + '"><strong>Send this brief by email instead</strong></a>');
+    btn.disabled = false; btn.textContent = 'Try again';
+  }
+});
+</script>
+</body>
+</html>
